@@ -13,6 +13,7 @@
   "dependencies": {
     "@ganache/filecoin": "^0.1.0",
     "@glif/filecoin-number": "^1.1.0-beta.17",
+    "delay": "^5.0.0",
     "filecoin.js": "^0.0.5-alpha",
     "ganache": "3.0.0-filecoin.2"
   },

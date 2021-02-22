@@ -5,11 +5,15 @@ const {
 } = require('filecoin.js')
 const { FilecoinNumber } = require('@glif/filecoin-number')
 const ganache = require('ganache')
+const delay = require('delay')
 
 const sendAmount = 5
 
 const server = ganache.server({
-  flavor: 'filecoin'
+  flavor: 'filecoin',
+  miner: {
+    blockTime: 1
+  }
 })
 server.listen(7777, async (err, blockchain) => {
   // Setup client
@@ -63,6 +67,11 @@ server.listen(7777, async (err, blockchain) => {
   console.log('Signed Message:', signedMessage)
   const msg = await wallet.sendSignedMessage(signedMessage)
   console.log('Msg:', msg)
+
+  // Wait 3 seconds to mine some blocks
+  // FIXME: Make it work with instamine mode
+  await delay(3000)
+  console.log(await client.chain.getHead())
 
   // After balances
   const fromBalanceAfter = new FilecoinNumber(
