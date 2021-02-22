@@ -1,3 +1,5 @@
+// Top-level await: Node v15
+
 import { HttpJsonRpcConnector, LotusClient } from 'filecoin.js'
 
 const conn = new HttpJsonRpcConnector({ url: 'http://127.0.0.1:7777/rpc/v0' })

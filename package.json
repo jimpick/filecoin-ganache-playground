@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ganache": "ganache filecoin",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Jim Pick (@jimpick)",
   "license": "MIT/Apache-2 (Permissive License Stack)",
   "dependencies": {
-    "filecoin.js": "^0.0.5-alpha"
+    "@ganache/filecoin": "^0.1.0",
+    "filecoin.js": "^0.0.5-alpha",
+    "ganache": "3.0.0-filecoin.2"
+  },
+  "engines": {
+    "node": "14"
   }
 }
